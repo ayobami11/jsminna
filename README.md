@@ -1,0 +1,2 @@
+# jsminna
+JSMinna Internship repository
