@@ -4,21 +4,48 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>JSMinna | Responsive Navbar</title>
-        <link rel="stylesheet" href="./styles.css">
+        <script
+            src="https://kit.fontawesome.com/a21dc2a35f.js"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./styles.css" />
         <script src="./script.js" defer></script>
     </head>
     <body>
-        <header class="header">
-            <nav class="navbar">
-                <ul class="navbar-list">
-                    <li class="navbar-item"><a href="#">Our solutions</a></li>
-                    <li class="navbar-item"><a href="#">Developers</a></li>
-                    <li class="navbar-item"><a href="#">Resources</a></li>
-                    <li class="navbar-item"><a href="#">Pricing</a></li>
-                    <li class="navbar-item"><a href="#">Sign in</a></li>
+        <header class="header flex">
+            <!-- Logo -->
+            <img class="logo" src="./images/flutterwave-logo.png" alt="" />
+            <!-- Navbar -->
+            <nav class="navbar flex hide">
+                <ul class="navbar-list flex">
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="#"
+                            >Our solutions <i class="fas fa-chevron-down"></i
+                        ></a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="#">Developers</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="#"
+                            >Resources <i class="fas fa-chevron-down"></i
+                        ></a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="#">Pricing</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="#">Sign in</a>
+                    </li>
                 </ul>
                 <button class="navbar-btn">Create account</button>
             </nav>
+            <!-- Hamburger / Close icon -->
+            <i class="hamburger fas fa-bars"></i>
         </header>
     </body>
 </html>

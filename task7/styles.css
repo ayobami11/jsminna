@@ -1,0 +1,125 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.125rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 1em 0;
+    padding: 0.75em;
+    text-transform: uppercase;
+}
+
+/* General classes */
+.flex {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
+/* Header section */
+.header {
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.logo {
+    width: 100px;
+}
+
+.hamburger {
+    margin: 1.5em 0;
+    margin-left: auto;
+}
+
+.navbar,
+.navbar-list {
+    flex-direction: column;
+}
+
+.navbar {
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.navbar-list {
+    text-align: center;
+}
+
+.navbar-item {
+    padding: 1em 0;
+    text-transform: capitalize;
+}
+
+.navbar-link {
+    color: #333;
+}
+
+.navbar-link:hover {
+    color: #f5a623;
+}
+
+.fa-chevron-down {
+    font-size: 0.75rem;
+    padding-left: 0.25em;
+}
+
+.navbar-btn {
+    align-self: center;
+    background: #f5a623;
+    color: #fff;
+    font-weight: 600;
+    min-width: 150px;
+    margin: 0 auto;
+}
+
+/* Media queries */
+@media (min-width: 900px) {
+    /* Header section */
+    .header {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar,
+    .navbar-list {
+        flex-direction: row;
+    }
+
+    .navbar {
+        display: flex;
+        height: auto;
+        width: 85%;
+    }
+
+    .navbar-list {
+        justify-content: space-evenly;
+        width: 90%;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
