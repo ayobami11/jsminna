@@ -1,6 +1,6 @@
 const hamburgerIcon = document.querySelector('.hamburger');
 
-// Displays the navbar for smaller screens
+// Displays the navbar for smaller screens when hambugerIcon is clicked
 const toggleMenu = () => {
     const logo = document.querySelector('.logo');
     const navbar = document.querySelector('.navbar');

@@ -75,6 +75,7 @@ button {
 
 .navbar-link {
     color: #333;
+    transition: color 0.3s;
 }
 
 .navbar-link:hover {
