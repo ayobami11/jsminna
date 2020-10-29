@@ -85,7 +85,7 @@ formInputs.forEach((formInput) => {
     formInput.addEventListener('input', validateFormInputs);
     formInput.addEventListener('input', toggleErrorMessage);
 });
-terms?.addEventListener('click', validateFormInputs);
+terms?.addEventListener('change', validateFormInputs);
 
 /**
  * Prevents the submission of the form.
