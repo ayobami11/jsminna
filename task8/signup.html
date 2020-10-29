@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JSMinna | Sign Up</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./styles.css" />
+        <script
+            src="https://kit.fontawesome.com/a21dc2a35f.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <!-- Form container -->
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>Sign Up</h1>
+                    <p>Please fill this form to create an account!</p>
+                    <hr />
+                </div>
+                <!-- Form -->
+                <form class="form" action="" method="POST">
+                    <div class="form-inputs">
+                        <!-- First name -->
+                        <div class="form-input-container first-name-container">
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="first-name"
+                                aria-label="First name"
+                                placeholder="First Name"
+                                pattern="^[a-zA-Z-]+$"
+                                required
+                                aria-required="true"
+                            />
+                        </div>
+                        <!-- Last name -->
+                        <div class="form-input-container last-name-container">
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="last-name"
+                                aria-label="Last name"
+                                placeholder="Last Name"
+                                pattern="^[a-zA-Z-]+$"
+                                required
+                                aria-required="true"
+                            />
+                        </div>
+                        <!-- Email -->
+                        <div class="form-input-container">
+                            <input
+                                class="form-input"
+                                type="email"
+                                name="email"
+                                aria-label="Email"
+                                placeholder="Email"
+                                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                required
+                                aria-required="true"
+                            />
+                        </div>
+                        <!-- Password -->
+                        <div class="form-input-container">
+                            <input
+                                id="password"
+                                class="form-input"
+                                type="password"
+                                name="password"
+                                aria-label="Password"
+                                placeholder="Password"
+                                minlength="8"
+                                required
+                                aria-required="true"
+                            />
+                        </div>
+                        <!-- Confirm password -->
+                        <div class="form-input-container">
+                            <input
+                                id="password-check"
+                                class="form-input"
+                                type="password"
+                                name="confirm-password"
+                                aria-label="Confirm password"
+                                placeholder="Confirm password"
+                                minlength="8"
+                                required
+                                aria-required="true"
+                            />
+                        </div>
+                    </div>
+                    <!-- Terms and conditions -->
+                    <div class="terms">
+                        <input
+                            id="terms"
+                            type="checkbox"
+                            name="terms"
+                            required
+                            aria-required="true"
+                        />
+                        <label for="terms"
+                            >I accept the <a href="#">Terms of Use</a> &
+                            <a href="#">Privacy Policy</a>.</label
+                        >
+                    </div>
+                    <!-- Submit button -->
+                    <button
+                        id="submit-btn"
+                        class="submit-btn"
+                        type="submit"
+                        disabled
+                        aria-disabled="true"
+                    >
+                        Sign Up
+                    </button>
+                </form>
+                <p class="required-description">
+                    All form inputs are required.
+                </p>
+            </div>
+            <!-- Bottom text -->
+            <p class="bottom-text">
+                Already got an account?
+                <a class="bottom-link" href="./login.html">Login here</a>
+            </p>
+        </main>
+    </body>
+</html>

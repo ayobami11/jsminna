@@ -1,0 +1,138 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 13px;
+}
+
+body {
+    background: #0a9bf5;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin-top: 1.25em;
+}
+
+/* Form styles */
+.form-container {
+    align-items: center;
+    background: #fff;
+    box-shadow: 4px 4px 4px rgba(39, 39, 39, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    padding: 1em 1.5em;
+    width: 90%;
+}
+
+.form-header {
+    align-self: flex-start;
+    width: 100%;
+}
+
+.form {
+    max-width: 700px;
+    width: 100%;
+}
+
+.form-inputs {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1.5em 0;
+}
+
+.form-input-container {
+    grid-column: 1 / -1;
+}
+
+.form-input {
+    background: #ddd;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    padding: 0.5em 0.75em;
+    width: 100%;
+}
+
+.form-input:valid {
+    border: 2px solid #008000;
+    color: #008000;
+}
+
+/* JavaScript used styles */
+.invalid-input {
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 0.8rem;
+}
+/* ******************** */
+
+/* Submit button */
+.submit-btn {
+    background: #0a9bf5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1em 0;
+    outline: none;
+    padding: 0.5em 1.5em;
+}
+
+.submit-btn:disabled {
+    background: #949494;
+}
+
+.required-description {
+    color: #289113;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* Bottom text */
+.bottom-text {
+    color: #fff;
+    margin-top: 1em;
+}
+
+.bottom-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* Media queries */
+@media (min-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+
+    .first-name-container {
+        grid-column: 1 / span 1;
+    }
+
+    .last-name-container {
+        grid-column: 2 / -1;
+    }
+}
