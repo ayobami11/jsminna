@@ -6,3 +6,8 @@ JSMinna Internship repository
 - Task 8:
    - [Login page](https://ayobami11.github.io/jsminna/task8/login.html)
    - [Sign up page](https://ayobami11.github.io/jsminna/task8/signup.html)
+
+- Task 9:
+   - [Landing page](https://ayobami11.github.io/jsminna/task9/pages/index.html)
+   - [Signup page](https://ayobami11.github.io/jsminna/task9/pages/signup.html)
+   - [Login page](https://ayobami11.github.io/jsminna/task9/pages/login.html)
