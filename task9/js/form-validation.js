@@ -96,7 +96,7 @@ terms?.addEventListener('change', validateFormInputs);
 const simulateLoading = (event) => {
     event.preventDefault();
     const initialButtonText = submitBtn.innerText;
-    
+
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>';
     setTimeout(() => {
         submitBtn.innerHTML = initialButtonText;

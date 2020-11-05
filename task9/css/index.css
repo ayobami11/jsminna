@@ -180,21 +180,14 @@ p {
     width: 100%;
 }
 
-.hamburger-list li {
-    font-weight: var(--font-weight-bold);
-}
-
 .hamburger-list a {
     color: var(--dark-blue);
+    font-weight: var(--font-weight-bold);
     transition: color 0.25s ease-in-out;
 }
 
 .hamburger-list a:hover {
     color: var(--lime-green);
-}
-
-.hamburger-display {
-    display: block;
 }
 /* ----------------- */
 
@@ -208,8 +201,7 @@ p {
 }
 
 .intro-image {
-    background: url('../images/bg-intro-mobile.svg')
-        no-repeat;
+    background: url('../images/bg-intro-mobile.svg') no-repeat;
     background-size: cover;
 }
 
@@ -337,7 +329,6 @@ footer {
 /* ------ */
 
 /* Attribution */
-
 .attribution {
     padding-bottom: 0.5em;
     text-align: center;
@@ -351,6 +342,7 @@ footer {
 .attribution a:hover {
     color: var(--lime-green);
 }
+/* --------- */
 
 /* Media queries */
 @media (min-width: 720px) {
