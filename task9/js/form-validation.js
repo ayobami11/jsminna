@@ -88,7 +88,7 @@ formInputs.forEach((formInput) => {
 terms?.addEventListener('change', validateFormInputs);
 
 /**
- * Prevents the submission of the form.
+ * Delays the submission of the form by 2 seconds.
  * When the form is submitted (submit button is clicked), the submit button element simulates a loading scenario for 2 seconds.
  *
  * @param {object} event The form element event object
