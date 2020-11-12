@@ -11,3 +11,5 @@ JSMinna Internship repository
    - [Landing page](https://ayobami11.github.io/jsminna/task9/pages/index.html)
    - [Signup page](https://ayobami11.github.io/jsminna/task9/pages/signup.html)
    - [Login page](https://ayobami11.github.io/jsminna/task9/pages/login.html)
+
+- Task 10: [World Countries Info Flashcards](https://ayobami11.github.io/jsminna/task9/pages/index.html)
