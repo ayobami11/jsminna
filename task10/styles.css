@@ -1,0 +1,93 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: hsl(230, 17%, 26%);
+    color: hsl(0, 0%, 100%);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* General classes */
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+}
+
+.main-header {
+    border-bottom: 2px solid hsl(228, 34%, 66%);
+    padding: 1em 0;
+    text-align: center;
+}
+
+.search-form {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.form-label {
+    color: orangered;
+    font-weight: 700;
+    margin-right: .5em;
+}
+
+.form-input {
+    border: none;
+    border-radius: .75em;
+    outline: none;
+    padding: .5em;
+}
+
+.countries {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.country-tile {
+    background: hsl(232, 19%, 15%);
+    border: 5px double hsla(0, 0%, 100%, .5);
+    background-clip: padding-box;
+    border-radius: 10px;
+    line-height: 2;
+    padding: .5em;
+}
+
+.country-tile:hover {
+    background: hsl(228, 28%, 20%);
+    transition: transform .4s ease-in-out;
+    transform: scale(1.02);
+}
+
+.country-header {
+    margin-bottom: 1em;
+}
+
+.country-figure {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.country-flag {
+    width: 50px;
+}
+
+.country-capital {
+    color: hsl(228, 34%, 66%);
+    font-weight: 700;
+    font-style: italic;
+}
+
+.country-population {
+    color: hsl(29, 100%, 31%);
+}
