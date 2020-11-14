@@ -23,14 +23,35 @@
             <h1>World Countries Info Flashcards</h1>
         </header>
         <main>
+            <!-- Search form -->
             <form class="search-form">
-                <label for="form-input" class="form-label">Search country:</label>
-                <input id="form-input" class="form-input" type="search" name="search-country" />
+                <!-- Search country input -->
+                <div class="search-div">
+                    <input
+                        id="search-input"
+                        class="search-input"
+                        type="search"
+                        name="search-country"
+                        aria-label="Search country"
+                        placeholder="Search country..."
+                    />
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <!-- Regions -->
+                <div>
+                    <label for="regions">Filter countries by region:</label>
+                    <select name="regions" id="regions" class="regions">
+                        <option class="country-region" value="all">All</option>
+                    </select>
+                </div>
             </form>
-
-            <div id="countries" class="countries grid-container">
+            <!-- Countries -->
+            <div id="countries" class="countries">
                 <i class="fas fa-spinner fa-pulse"></i>Loading...
             </div>
         </main>
+        <footer>
+            <p>Made with ❤ by <a href="https://www.github.com/ayobami11"></a>Tunwase Ayobami</p>
+        </footer>
     </body>
 </html>
