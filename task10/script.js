@@ -1,7 +1,8 @@
-const countriesContainer = document.getElementById('countries');
 const searchForm = document.querySelector('.search-form');
 const searchCountryInput = document.getElementById('search-input');
 const regionSelectElement = document.getElementById('regions');
+
+const countriesContainer = document.getElementById('countries');
 // countriesData stores the data retrieved from the API
 let countriesData;
 
@@ -10,7 +11,8 @@ let countriesData;
  *
  * @param {string || number} propertyValue The value of the property
  */
-const resetEmptyProperties = (propertyValue) => propertyValue || 'Not set';
+const resetEmptyProperties = (propertyValue) =>
+    propertyValue ? propertyValue : 'Not set';
 
 /**
  * Converts a string to lower case and returns it
@@ -82,6 +84,9 @@ const generateCountriesList = (countryList) => {
     for (const country of countryList) {
         generateCountryTemplate(country);
     }
+    if (!countriesContainer.innerHTML) {
+        countriesContainer.innerHTML = '<p>No countries found.</p>';
+    }
 };
 
 /**
@@ -94,11 +99,21 @@ const filterCountriesBySearch = (countriesList) => {
         searchCountryInput.value
     );
 
-    const filteredCountriesData = countriesList.filter(({ name }) =>
-        convertStringToLowercase(name).includes(searchCountryValue)
-    );
+    if (regionSelectElement.value === 'all') {
+        const filteredCountriesData = countriesList.filter(({ name }) =>
+            convertStringToLowercase(name).includes(searchCountryValue)
+        );
 
-    generateCountriesList(filteredCountriesData);
+        generateCountriesList(filteredCountriesData);
+    } else {
+        const filteredCountriesData = countriesList.filter(
+            ({ name, region }) =>
+                convertStringToLowercase(name).includes(searchCountryValue) &&
+                region === regionSelectElement.value
+        );
+
+        generateCountriesList(filteredCountriesData);
+    }
 };
 
 searchCountryInput.addEventListener('input', () =>
@@ -132,7 +147,7 @@ const generateRegionOptions = (regionList) => {
 /**
  * Maps through a list of countries and returns their regions.
  * Duplicates regions are then removed from the returned array.
- * The final array is sorted in ascending order.
+ * The final array is sorted in alphabetical order.
  *
  * @param {array} countryList A list of countries with information stored in key-value pairs
  */
@@ -164,6 +179,7 @@ regionSelectElement.addEventListener('change', ({ target }) => {
     } else {
         filterCountriesByRegion(countriesData, () => target.value);
     }
+    searchCountryInput.value = '';
 });
 
 /**
