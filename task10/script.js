@@ -85,31 +85,31 @@ const generateCountriesList = (countryList) => {
         generateCountryTemplate(country);
     }
     if (!countriesContainer.innerHTML) {
-        countriesContainer.innerHTML = '<p>No countries found.</p>';
+        countriesContainer.innerHTML = '<p class="error-message">No countries found.</p>';
     }
 };
 
 /**
  * Filters the list of countries to include based on the value of the user's input
  *
- * @param {array} countriesList An array of objects containing countries' details
+ * @param {array} countryList A list of countries with information stored in key-value pairs
  */
-const filterCountriesBySearch = (countriesList) => {
+const filterCountriesBySearch = (countryList) => {
     const searchCountryValue = convertStringToLowercase(
         searchCountryInput.value
     );
 
     if (regionSelectElement.value === 'all') {
-        const filteredCountriesData = countriesList.filter(({ name }) =>
+        const filteredCountriesData = countryList.filter(({ name }) =>
             convertStringToLowercase(name).includes(searchCountryValue)
         );
 
         generateCountriesList(filteredCountriesData);
     } else {
-        const filteredCountriesData = countriesList.filter(
+        const filteredCountriesData = countryList.filter(
             ({ name, region }) =>
                 convertStringToLowercase(name).includes(searchCountryValue) &&
-                region === regionSelectElement.value
+                resetEmptyProperties(region) === regionSelectElement.value
         );
 
         generateCountriesList(filteredCountriesData);
@@ -129,7 +129,7 @@ const generateRegionTemplate = (region) => {
     const option = document.createElement('option');
     option.value = region;
     option.innerText = region;
-    option.classList.add('country-region');
+    option.classList.add('region-option');
     regionSelectElement.appendChild(option);
 };
 
@@ -164,7 +164,7 @@ const getCountryRegions = (countryList) => {
  * Generates a list of countries based on the filtered results.
  *
  * @param {array} countryList A list of countries with information stored in key-value pairs
- * @param {function} func A callback function that returns the value of the clicked region
+ * @param {function} func A callback function that returns the value of the clicked region option
  */
 const filterCountriesByRegion = (countryList, func) => {
     const filteredCountriesByRegion = countryList.filter(
@@ -185,21 +185,25 @@ regionSelectElement.addEventListener('change', ({ target }) => {
 /**
  * Fetches a list of countries from the given API.
  * Invokes the generateCountriesList() with the data from the API.
+ * Populates the regionSelectElement with all possible regions from the API.
  * Displays an error message if the request to the API was unsuccessful.
  */
 const fetchCountriesData = async () => {
     try {
         const response = await fetch('https://restcountries.eu/rest/v2/all');
-        countriesData = await response.json();
-
-        generateCountriesList(countriesData);
-        generateRegionOptions(getCountryRegions(countriesData));
-
-        searchForm.classList.add('display-form');
-        countriesContainer.classList.add('grid-container');
+        
+        if (response.ok) {
+            countriesData = await response.json();
+    
+            generateCountriesList(countriesData);
+            generateRegionOptions(getCountryRegions(countriesData));
+    
+            searchForm.classList.add('display-form');
+            countriesContainer.classList.add('grid-container');
+        }
     } catch {
         countriesContainer.innerHTML =
-            '<p>Something went wrong. Please check your network and try again.</p>';
+            '<p class="error-message">Something went wrong. Please check your network and try again.</p>';
     }
 };
 

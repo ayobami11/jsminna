@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Tunwase Ayobami" />
-        <title>Document</title>
+        <title>JSM ft. Countries Of The World</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -20,11 +20,11 @@
     </head>
     <body>
         <header class="main-header">
-            <h1>World Countries Info Flashcards</h1>
+            <h1 class="container">Countries Of The World &iquest;</h1>
         </header>
         <main>
             <!-- Search form -->
-            <form class="search-form">
+            <form class="search-form container">
                 <!-- Search country input -->
                 <div class="search-div">
                     <input
@@ -38,7 +38,7 @@
                     <i class="fas fa-search search-icon"></i>
                 </div>
                 <!-- Regions -->
-                <div>
+                <div class="regions-div">
                     <label for="regions">Filter countries by region:</label>
                     <select name="regions" id="regions" class="regions">
                         <option class="country-region" value="all">All</option>
@@ -46,12 +46,22 @@
                 </div>
             </form>
             <!-- Countries -->
-            <div id="countries" class="countries">
-                <i class="fas fa-spinner fa-pulse"></i>Loading...
+            <div id="countries" class="countries container">
+                <p class="loading">
+                    <i class="fas fa-spinner fa-pulse"></i>Loading...
+                </p>
             </div>
         </main>
         <footer>
-            <p>Made with ❤ by <a href="https://www.github.com/ayobami11"></a>Tunwase Ayobami</p>
+            <p>
+                Made with ❤ by
+                <a
+                    class="footer-link"
+                    href="https://www.github.com/ayobami11"
+                    target="_blank"
+                    >Tunwase Ayobami</a
+                >.
+            </p>
         </footer>
     </body>
 </html>
