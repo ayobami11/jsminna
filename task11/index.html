@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Divisional Police Help Lines</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <script
+            src="https://kit.fontawesome.com/a21dc2a35f.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <header class="page-header">
+            <h1 class="page-title">Lagos / Ogun Police help lines</h1>
+        </header>
+        <main>
+            <form class="search-form">
+                <div class="search-div">
+                    <input
+                        id="search-contact"
+                        class="search-input"
+                        type="search"
+                        name="search-contact"
+                        aria-label="Search contact"
+                        placeholder="Search contact..."
+                    />
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </form>
+            <div id="contacts" class="contacts">
+                <p class="loading">
+                    <i class="fas fa-stroopwafel fa-spin"></i>Fetching contacts...
+                </p>
+            </div>
+        </main>
+    </body>
+</html>

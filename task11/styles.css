@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header */
+.page-header {
+    color: #a5c452;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.page-title {
+    text-transform: capitalize;
+}
+
+/* Search form */
+.search-form {
+    border-bottom: 2px solid #a5c452;
+    border-top: 2px solid #a5c452;
+    display: none;
+    text-align: center;
+}
+
+.search-div {
+    position: relative;
+}
+
+.search-input {
+    border: 3px solid #d9d9d9;
+    border-radius: 20px;
+    margin: 1em auto;
+    outline: none;
+    padding: .5em;
+    padding-left: 2.5em;
+    transition: all .75s ease-in-out;
+}
+
+.search-input:focus {
+    border: 3px solid currentColor;
+    color: #298eb6;
+}
+
+.search-icon {
+    color: #d9d9d9cb;
+    font-size: 1.25rem;
+    left: 1.25em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Contacts section */
+.contacts {
+    margin: 1em auto;
+    width: 90%;
+}
+
+.contact {
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #fff;
+    display: grid;
+    font-weight: 700;
+    padding: 1.5em;
+    place-items: center;
+    transition: all .5s ease-in-out;
+}
+
+.contact:hover {
+    background: linear-gradient(145deg, #e6e6e6, #fff);
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #fff;
+}
+
+.contact-link {
+    align-items: center;
+    color: #a5c452;
+    display: flex;
+    flex-direction: space-between;
+}
+
+.contact-name {
+    margin-right: .75em;
+}
+
+/* JS used styles */
+.loading {
+    font-size: 1.35rem;
+}
+
+.fa-spin {
+    margin-right: .75em;
+}
+
+.display-form {
+    display: block;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.error-message {
+    color: #f0681a;
+    font-weight: 700;
+}

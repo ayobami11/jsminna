@@ -77,7 +77,7 @@ const generateCountryTemplate = ({
 /**
  * Invokes the generateCountryTemplate() for each country
  *
- * @param {array} countryList An list of countries with information stored in key-value pairs
+ * @param {array} countryList A list of countries with information stored in key-value pairs
  */
 const generateCountriesList = (countryList) => {
     countriesContainer.innerHTML = '';
