@@ -86,7 +86,7 @@ const generateRandomProgrammingQuotes = () => {
     const randomProgrammingQuote = programmingQuotes[randomArrayIndex];
     const { quote, author } = randomProgrammingQuote;
 
-    quoteTextElement.innerText = quote;
+    quoteTextElement.innerHTML = `<p>&ldquo; ${quote}. &rdquo;</p>`;
     quoteAuthorElement.innerText = author;
 };
 refreshQuoteBtn.addEventListener('click', generateRandomProgrammingQuotes);
@@ -197,7 +197,7 @@ const displayDateData = (currentDate) => {
     if (currentHour <= 16) {
         document.body.classList.add('day-bg');
         document.body.classList.add('day-mode');
-    } else {
+     } else {
         document.body.classList.add('night-bg');
     }
 
