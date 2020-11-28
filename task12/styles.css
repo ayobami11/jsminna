@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&display=swap');
+
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    color: hsl(0, 0%, 100%);
+    display: grid;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+hr {
+    display: none;
+}
+
+/* General classes */
+.container {
+    padding: 2.5em;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    outline: none;
+    width: fit-content;
+}
+
+/* Specific styles */
+.main {
+    display: grid;
+    height: 100%;
+}
+
+/* Quote section */
+.quote {
+    max-width: 800px;
+}
+
+.quote-text {
+    font-size: 1.125rem;
+}
+
+.quote-author {
+    font-weight: 700;
+    letter-spacing: .05em;
+    margin: .75em 0;
+}
+
+.quote-author cite {
+    font-style: normal;
+}
+
+.refresh-btn {
+    background: transparent;
+    color: white;
+    margin-left: 1.5em;
+}
+
+/* Time section */
+.time-details {
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.time-period {
+    font-weight: 300;
+    letter-spacing: .15em;
+    margin-top: 1em;;
+}
+
+.fa-sun,
+.fa-moon {
+    margin-right: .5em;
+}
+
+.current-time {
+    display: inline-block;
+    font-size: 6rem;
+    font-weight: 900;
+    margin: .1em 0;
+}
+
+.timezone-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .06em;
+    margin-left: .5em;
+}
+
+.location {
+    font-weight: 600;
+    letter-spacing: .08em;
+}
+
+.extras-btn {
+    align-self: flex-start;
+    font-weight: 600;
+    letter-spacing: .2em;
+    margin: 3em 0 1em;
+    padding: .75em;
+}
+
+/* Extras section */
+.fa-chevron-up,
+.fa-chevron-down {
+    background: hsl(0, 0%, 20%);
+    border-radius: 50%;
+    color: hsl(0, 0%, 100%);
+    padding: .4em;
+}
+
+.extra-info {
+    background: hsla(0, 100%, 0%, .7);
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+}
+
+.extras {
+    display: none;
+}
+
+.extra {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+.extra-heading {
+    letter-spacing: .08em;
+}
+
+.extra-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+hr {
+    display: none;
+}
+
+/* JS used styles */
+.day-bg {
+    background: url('./images/day-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.night-bg {
+    background: url('./images/night-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.align-between {
+    align-content: space-between;
+}
+
+.toggle-extras {
+    display: flex;
+}
+
+/* Day mode styles */
+.day-mode .extra-info {
+    background: hsla(0, 0%, 77%, 0.9);
+}
+
+.day-mode hr {
+    background: hsl(0, 0%, 65%);
+}
+
+.day-mode .extra-heading {
+    color: hsl(0, 0%, 30%);
+    text-shadow: 2px 2px 5px hsl(0, 0%, 65%), -2px -2px 5px hsl(0, 0%, 65%);
+}
+
+.day-mode .extra-value {
+    color: hsl(0, 0%, 20%);
+}
+
+@media (min-width: 600px) {
+    /* General styles */
+    html {
+        font-size: 16px;
+    }
+
+    hr {
+        background: hsl(0, 0%, 30%);
+        border: none;
+        display: block;
+        width: .1em;
+    }
+
+    /* Specific styles */
+    .quote {
+        justify-content: space-between;
+    }
+
+    .time-details {
+        flex-direction: row;
+    }
+
+    .extras-btn {
+        align-self: flex-end;
+    }
+
+    .extra-info {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .extra {
+        flex-direction: column;
+        margin: 1em 0;
+    }
+
+    .extra-heading {
+        font-weight: 500;
+        letter-spacing: .06em;
+    }
+    
+    .extra-value {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+}

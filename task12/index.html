@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Ayobami Tunwase" />
+
+        <title>Clock App</title>
+
+        <link rel="stylesheet" href="./styles.css" />
+
+        <script
+            src="https://kit.fontawesome.com/a21dc2a35f.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <!-- Main section -->
+        <section class="main-section container">
+            <div class="main">
+                <div id="quote" class="quote extras toggle-extras">
+                    <!-- Quote section -->
+                    <div>
+                        <blockquote id="quote-text">
+                            <p>
+                                &ldquo; The only way to learn a programming
+                                language is by writing programs in it. &rdquo;
+                            </p>
+                        </blockquote>
+                        <p class="quote-author">
+                            <cite id="quote-author">Dennis Ritchi</cite>
+                        </p>
+                    </div>
+                    <!-- Returns a randomly generated quote -->
+                    <button id="refresh-btn" class="refresh-btn btn">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <!-- Current time data -->
+                <div class="time-details">
+                    <div>
+                        <p
+                            id="time-period"
+                            class="time-period text-uppercase"
+                        ></p>
+                        <p>
+                            <span id="current-time" class="current-time"></span>
+                            <abbr
+                                class="timezone-name"
+                                title="West African Time"
+                                >WAT</abbr
+                            >
+                        </p>
+                        <p class="location text-uppercase">In Lagos, Nigeria</p>
+                    </div>
+                    <!-- Extras button -->
+                    <button
+                        id="extras-btn"
+                        class="extras-btn btn text-uppercase"
+                    >
+                        More <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Extra date data -->
+        <aside class="extras extra-info container">
+            <div>
+                <!-- Timezone -->
+                <div class="extra">
+                    <p class="extra-heading text-uppercase">Current timezone</p>
+                    <span id="timezone" class="extra-value"></span>
+                </div>
+                <!-- Day of the year -->
+                <div class="extra">
+                    <p class="extra-heading text-uppercase">Day of the year</p>
+                    <span id="day-of-year" class="extra-value"></span>
+                </div>
+            </div>
+            <hr size="250" />
+            <div>
+                <!-- Day of the week -->
+                <div class="extra">
+                    <p class="extra-heading text-uppercase">Day of the week</p>
+                    <span id="day-of-week" class="extra-value"></span>
+                </div>
+                <!-- Week number -->
+                <div class="extra">
+                    <p class="extra-heading text-uppercase">Week number</p>
+                    <span id="week-number" class="extra-value"></span>
+                </div>
+            </div>
+        </aside>
+    </body>
+</html>
