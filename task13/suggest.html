@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/forms.css" />
+        <script src="./js/suggest.js" defer></script>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <section class="form-section">
+                <h2>Suggest A Product</h2>
+                <form
+                    action="https://jsminnastore.herokuapp.com/suggest"
+                    method="POST"
+                >
+                    <div class="form-inputs">
+                        <div class="form-input">
+                            <label for="itemName" class="form-label"
+                                >Item name
+                                <abbr
+                                    class="required-input"
+                                    title="This input field is required"
+                                    aria-label="This input field is required"
+                                    >*</abbr
+                                ></label
+                            ><input
+                                id="itemName"
+                                class="input-field"
+                                type="text"
+                                name="itemName"
+                                required
+                                aria-required="true"
+                            />
+                        </div>
+                        <div class="form-input">
+                            <label for="itemDescription" class="form-label"
+                                >Item description
+                                <abbr
+                                    class="required-input"
+                                    title="This input field is required"
+                                    aria-label="This input field is required"
+                                    >*</abbr
+                                ></label
+                            ><input
+                                id="itemDescription"
+                                class="input-field"
+                                type="text"
+                                name="itemDescription"
+                                required
+                                aria-required="true"
+                            />
+                        </div>
+                        <div class="form-input">
+                            <label for="itemCategory" class="form-label"
+                                >Item category<abbr
+                                    class="required-input"
+                                    title="This input field is required"
+                                    aria-label="This input field is required"
+                                    >*</abbr
+                                ></label
+                            >
+                            <select
+                                id="itemCategory"
+                                name="itemCategory"
+                                required
+                                aria-required="true"
+                            >
+                                <option
+                                    value=""
+                                    selected
+                                    aria-selected="true"
+                                    disabled
+                                    aria-disabled="true"
+                                >
+                                    Select a category
+                                </option>
+                                <option value="electronics">Electronics</option>
+                                <option value="furniture">Furniture</option>
+                                <option value="grocery">Grocery</option>
+                            </select>
+                        </div>
+                        <div class="form-input">
+                            <label for="reason" class="form-label"
+                                >Reason for suggestion</label
+                            ><textarea
+                                id="reason"
+                                class="input-field"
+                                name="reason"
+                                rows="5"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <button class="submit-btn" type="submit">
+                        Submit suggestion
+                    </button>
+                </form>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+</html>

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: hsl(180, 100%, 50%);
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+input:checked + label {
+    color: hsl(0, 0%, 15%);
+    font-weight: 700;
+}
+
+select,
+option {
+    font-size: 1rem;
+}
+
+select {
+    padding: .25em .5em;
+}
+
+textarea {
+    resize: none;
+}
+
+.success-message,
+.error-message {
+    background: hsl(180, 50%, 90%);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: .5em 0;
+    padding: .25em;
+    text-align: center;
+}
+
+.success-message {
+    border: 2px solid currentColor;
+    color: hsl(90, 80%, 45%);
+}
+
+.error-message {
+    border: 2px solid currentColor;
+    color: hsl(0, 80%, 50%);
+}
+
+/* Form section */
+.form-section {
+    background: hsl(0, 0%, 100%);
+    box-shadow: 5px 5px 5px hsla(0, 0%, 50%, .1);
+    margin: 3em auto 1.5em;
+    max-width: 900px;
+    padding: calc(.02 * 100% + 1em);
+    width: 90%;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin: .75em 0;
+}
+
+.form-label {
+    color: hsl(0, 0%, 30%);
+    font-weight: 600;
+    margin-bottom: .25em;
+}
+
+.input-field {
+    border: 1px solid hsl(0, 0%, 30%);
+    color: hsl(0, 0%, 15%);
+    font-size: 1rem;
+    font-weight: 700;
+    outline-color: currentColor;
+    padding: .25em .5em;
+}
+
+.gender-inputs {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input input {
+    padding-right: calc(30px + .5em);
+    width: 100%;
+}
+
+.password-input button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.password-btn {
+    background: hsl(0, 0%, 100%);
+    color: hsl(0, 80%, 50%);
+    font-size: 1.125rem;
+}
+
+.required-input {
+    color: hsl(0, 80%, 50%);
+    font-weight: 700;
+    margin-left: .25em;
+}
+
+.submit-btn {
+    background: hsl(90, 100%, 50%);
+    color: hsl(0, 0%, 100%);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1em 0;
+    padding: .35em .5em;
+}
+
+.submit-btn:hover {
+    background: hsl(90, 75%, 50%);
+}
+
+.submit-btn:active {
+    outline: 2px solid hsl(90, 75%, 25%);
+}
+
+.form-link {
+    border-bottom: 3px double currentColor;
+    color: hsl(30, 80%, 50%);
+    font-weight: 700;
+}

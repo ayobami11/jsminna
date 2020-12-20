@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-margin-top: 5.5em;
+}
+
+body {
+    color: hsl(0, 0%, 25%);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: hsl(30, 80%, 50%);
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+main {
+    margin-top: 5.5em;
+}
+
+select,
+option {
+    font-size: 1rem;
+}
+
+select {
+    padding: .25em .5em;
+}
+
+/* General classes */
+.fa-spin {
+    margin-right: .75em;
+}
+
+.fa-chevron-down {
+    font-size: .875rem;
+    margin-left: .5em;
+}
+
+.link-btn {
+    background: hsl(30, 80%, 50%);
+    border-radius: .75em;
+    color: hsl(0, 0%, 100%);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: .4em .8em;
+}
+
+.link-btn:hover {
+    background: hsl(30, 80%, 30%);
+    transition: all .75s ease-in-out;
+}
+
+/* Header */
+.header {
+    background: hsl(0, 0%, 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.header-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 1em auto;
+    width: 90%;
+}
+
+.header-navbar {
+    display: none;
+    max-width: 700px;
+    width: 70%;
+}
+
+.header-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hamburger-link,
+.header-link {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.hamburger-link:hover,
+.header-link:hover {
+    color: hsl(30, 80%, 30%);
+    transition: all .75s ease-in-out;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-btn {
+    background: transparent;
+    color: hsl(30, 80%, 50%);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    z-index: 2;
+}
+
+.dropdown-content a {
+    background: hsl(0, 0%, 75%);
+    color: hsl(0, 0%, 100%);
+    display: block;
+    padding: .5em;
+    text-transform: capitalize;
+}
+
+.dropdown-content a:hover {
+    background: hsl(0, 0%, 60%);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.header-login {
+    display: none;
+}
+
+
+/* Hamburger */
+.hamburger {
+    background: transparent;
+}
+
+.hamburger-nav {
+    background: hsl(0, 0%, 100%);
+    border: 2px solid hsl(30, 80%, 50%);
+    border-radius: .5em;
+    display: none;
+    left: 50%;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: .75em 0;
+    position: fixed;
+    text-align: center;
+    top: 20%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.hamburger-item {
+    padding: .5em 0;
+}
+
+/* Categories */
+.category {
+    margin: 1.5em auto;
+}
+
+.category-title {
+    background: hsl(0, 0%, 100%);
+    border-bottom: 2px solid hsl(30, 100%, 50%);
+    border-top: 2px solid hsl(30, 100%, 50%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    padding: .25em 5%;
+    position: sticky;
+    text-transform: capitalize;
+    top: 3.125em;
+    z-index: 1;
+}
+
+/* Products */
+.products {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.product {
+    border: 5px double currentColor;
+    margin: 1em;
+    text-align: center;
+}
+
+.image-container {
+    height: 300px;
+}
+
+.product-image {
+    height: 100%;
+    width: 100%;
+}
+
+.product-info {
+    border-top: 5px double currentColor;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: .75em 0;
+}
+
+.product-price::before {
+    /* Naira sign */
+    content: '\20A6';
+}
+
+/* Form */
+.form-section {
+    background: hsl(0, 0%, 100%);
+    border: 2px dashed currentColor;
+    color: hsl(210, 100%, 50%);
+    margin: 3em auto 1.5em;
+    max-width: 900px;
+    padding: calc(.01 * 100% + 1em);
+    width: 90%;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin: .75em 0;
+}
+
+.form-label {
+    color: hsl(0, 0%, 30%);
+    font-weight: 600;
+    margin-bottom: .25em;
+}
+
+.submit-btn {
+    background: hsl(210, 100%, 55%);
+    color: hsl(0, 0%, 100%);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1em 0;
+    padding: .35em .5em;
+}
+
+.submit-btn:hover {
+    background: hsl(210, 75%, 50%);
+}
+
+.submit-btn:active {
+    outline: 2px solid hsl(210, 75%, 25%);
+}
+
+.error-message {
+    background: hsl(180, 50%, 90%);
+    color: hsl(0, 80%, 50%);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: .5em 0;
+    padding: .35em;
+    text-align: center;
+}
+
+/* Suggestions */
+.suggestions-section {
+    display: none;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.suggestions-title {
+    margin: .75em 0;
+}
+
+.suggestions {
+    color: hsl(60, 100%, 30%);
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1em;
+}
+
+.suggestion-tile {
+    animation-name: fade-in;
+    animation-duration: 2s;
+    border: 2px dashed hsl(60, 80%, 30%);
+    border-radius: .75em;
+    line-height: 1.75;
+    padding: 1em;
+}
+
+.suggestion-tile:hover {
+    border-style: dotted;
+    transform: scale(1.02);
+    transition: all .25s ease-in-out;
+}
+
+.suggestion-label {
+    color: hsl(0, 0%, 30%);
+}
+
+/* Top button */
+.scroll-top {
+    margin: 1em;
+    text-align: right;
+}
+
+.top-btn {
+    background: hsl(30, 80%, 50%);
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 0px -4px 4px rgba(0, 0, 0, 0.1);
+    color: hsl(0, 0%, 100%);
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: .75em 1.125em;
+}
+
+.top-btn:hover {
+    background: hsl(30, 80%, 30%);
+    transition: all .75s ease-in-out;
+}
+
+/* JS used classes */
+.display-block {
+    display: block;
+}
+
+/* Media queries */
+@media (min-width: 600px) {
+    /* Header */
+    .header-navbar,
+    .header-login {
+        display: block;
+    }
+    
+    /* Hamburger */
+    .hamburger,
+    .hamburger-nav {
+        display: none;
+    }
+
+    /* Products */
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* grid-gap: 1em;
+        margin: 0; */
+    }
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

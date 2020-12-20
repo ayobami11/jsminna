@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Tunwase Ayobami" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/forms.css" />
+        <script
+            src="https://kit.fontawesome.com/a21dc2a35f.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./js/login.js" defer></script>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <section class="form-section">
+                <h2>Login</h2>
+                <form action="https://jsminnastore.herokuapp.com/auth/login/" method="POST">
+                    <div class="form-input">
+                        <label class="form-label" for="email"
+                            >Email
+                            <abbr
+                                class="required-input"
+                                title="This input field is required"
+                                aria-label="This input field is required"
+                                >*</abbr
+                            ></label
+                        ><input
+                            id="email"
+                            class="input-field"
+                            type="email"
+                            name="email"
+                            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            required
+                            aria-required="true"
+                        />
+                    </div>
+                    <div class="form-input">
+                        <label class="form-label" for="password"
+                            >Password
+                            <abbr
+                                class="required-input"
+                                title="This input field is required"
+                                aria-label="This input field is required"
+                                >*</abbr
+                            ></label
+                        >
+                        <div class="password-input">
+                            <input
+                                id="password"
+                                class="input-field"
+                                type="password"
+                                name="password"
+                                minlength="8"
+                                maxlength="30"
+                                required
+                                aria-required="true"
+                            />
+                            <button id="password-btn" class="password-btn" type="button">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="submit-btn" type="submit">Login</button>
+                </form>
+                <p>
+                    Don't have an account yet?
+                    <a class="form-link" href="./signup.html">Sign Up</a>
+                </p>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+</html>
