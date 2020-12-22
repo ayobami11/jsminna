@@ -345,7 +345,7 @@ const generateSuggestionTemplate = ({
     const suggestionDataContainer = document.createElement('div');
     suggestionDataContainer.classList.add('suggestion-tile');
     suggestionDataContainer.innerHTML = `
-        <p><span class="suggestion-label">Item name:<span> ${itemName}</p>
+        <p><span class="suggestion-label">Item name:</span> ${itemName}</p>
         <p><span class="suggestion-label">Item description:</span> ${itemDescription}</p>
         <p><span class="suggestion-label">Item category:</span> ${itemCategory}</p>
         <p><span class="suggestion-label">Reason:</span> ${reason}</p>
