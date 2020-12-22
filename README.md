@@ -18,4 +18,4 @@ JSMinna Internship repository
 
 - Task 12: [Clock App](https://ayobami11.github.io/jsminna/task12/index.html)
 
-- Task 13: [Cartify](https://ayobami11.github.io/jsminna/task13/index.html)
+- Task 13: [Cartify](https://ayobami11.github.io/jsminna/task13/signup.html)
