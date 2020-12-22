@@ -150,7 +150,7 @@ select {
     display: block;
 }
 
-.header-login {
+.header-logout {
     display: none;
 }
 
@@ -398,7 +398,7 @@ select {
 @media (min-width: 600px) {
     /* Header */
     .header-navbar,
-    .header-login {
+    .header-logout {
         display: block;
     }
     

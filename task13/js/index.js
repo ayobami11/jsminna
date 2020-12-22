@@ -1,4 +1,6 @@
 // Global variables
+const headerLogoutBtn = document.getElementById('header-logout');
+
 const dropdownContent = document.getElementsByClassName('dropdown-content');
 
 const scrollTopBtn = document.getElementById('top-btn');
@@ -203,6 +205,15 @@ const products = [
 ];
 
 /**
+ * Removes the auth token from localStorage when the user logs out
+ */
+const removeAuthToken = () => {
+    localStorage.removeItem('userToken');
+    window.location.href = './login.html';
+};
+headerLogoutBtn.addEventListener('click', removeAuthToken);
+
+/**
  * Formats a number to include commas in appropriate places
  *
  * @param {number} number The number which is formatted to include commas
@@ -278,7 +289,7 @@ const generateCategoryTemplate = ({ category, products }) => {
     );
 
     currentCategory.innerHTML = currentCategoryTitle;
-    
+
     currentCategory.appendChild(categoryProducts);
     categoriesContainer.appendChild(currentCategory);
 };
