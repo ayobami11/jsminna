@@ -1,5 +1,5 @@
 // Global variables
-const headerLogoutBtn = document.getElementById('header-logout');
+const headerLogoutBtns = document.getElementsByClassName('header-logout');
 
 const dropdownContent = document.getElementsByClassName('dropdown-content');
 
@@ -211,7 +211,7 @@ const removeAuthToken = () => {
     localStorage.removeItem('userToken');
     window.location.href = './login.html';
 };
-headerLogoutBtn.addEventListener('click', removeAuthToken);
+[...headerLogoutBtns].forEach(button => button.addEventListener('click', removeAuthToken));
 
 /**
  * Formats a number to include commas in appropriate places
