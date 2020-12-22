@@ -29,6 +29,11 @@ const validateFormInputs = () => {
     return formInputsValid;
 };
 
+/**
+ * Makes a request to the API and returns feedback for the user
+ * 
+ * @param {object} event The event object
+ */
 const submitFormData = async (event) => {
     event.preventDefault();
 
@@ -42,7 +47,6 @@ const submitFormData = async (event) => {
             for (const [name, value] of formData) {
                 user[name] = value;
             }
-            console.log(JSON.stringify(user));
 
             const response = await fetch(endpoint, {
                 method: 'POST',
@@ -53,20 +57,12 @@ const submitFormData = async (event) => {
             });
 
             if (response.ok) {
-                console.log(response);
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
 
                 if (jsonResponse.success) {
                     if (document.querySelector('.error-message')) {
                         document.querySelector('.error-message').remove();
                     }
-
-                    localStorage.setItem(
-                        'userToken',
-                        jsonResponse.payload.token
-                    );
-                    console.log(localStorage.getItem('userToken'));
 
                     const successMessageElement = document.createElement('p');
                     successMessageElement.innerText =
@@ -74,10 +70,10 @@ const submitFormData = async (event) => {
                     successMessageElement.classList.add('success-message');
 
                     formElement.after(successMessageElement);
-                    // setTimeout(
-                    //     () => (window.location.href = './login.html'),
-                    //     3000
-                    // );
+                    setTimeout(
+                        () => (window.location.href = './login.html'),
+                        3000
+                    );
                 } else {
                     if (!document.querySelector('error-message')) {
                         const failureMessageElement = document.createElement(
@@ -97,4 +93,3 @@ const submitFormData = async (event) => {
     }
 };
 formElement.addEventListener('submit', submitFormData);
-console.log(localStorage);

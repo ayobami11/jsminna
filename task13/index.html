@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Cartify | Home</title>
 
         <link rel="stylesheet" href="./css/index.css" />
         <script
@@ -23,9 +23,6 @@
                             <a class="header-link" href="#">Home</a>
                         </li>
                         <li class="header-item">
-                            <a class="header-link" href="#">About</a>
-                        </li>
-                        <li class="header-item">
                             <div class="dropdown">
                                 <button class="dropdown-btn header-link">
                                     Categories
@@ -38,19 +35,23 @@
                             </div>
                         </li>
                         <li class="header-item">
-                            <a class="header-link" href="#">Services</a>
+                            <a class="header-link" href="#suggest">Suggest</a>
+                        </li>
+                        <li class="header-item">
+                            <a class="header-link" href="./signup.html"
+                                >Sign Up</a
+                            >
                         </li>
                     </ul>
                 </nav>
-                <a class="link-btn header-login" href="./login.html">Login</a>
+                <a class="link-btn header-login" href="./login.html">Logout</a>
                 <button class="hamburger">
                     <!-- Hamburger / Close icon -->
-                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-bars fa-2x"></i>
                 </button>
             </div>
         </header>
         <main>
-            <menu></menu>
             <!-- Hamburger menu -->
             <nav class="hamburger-nav">
                 <ul class="hamburger-list">
@@ -58,16 +59,25 @@
                         <a class="hamburger-link" href="#">Home</a>
                     </li>
                     <li class="hamburger-item">
-                        <a class="hamburger-link" href="#">About</a>
+                        <div class="dropdown">
+                            <button class="dropdown-btn header-link">
+                                Categories
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div
+                                id="dropdown-content"
+                                class="dropdown-content"
+                            ></div>
+                        </div>
                     </li>
                     <li class="hamburger-item">
-                        <a class="hamburger-link" href="#">Contact</a>
+                        <a class="hamburger-link" href="#suggest">Suggest</a>
                     </li>
                     <li class="hamburger-item">
-                        <a class="hamburger-link" href="#">Services</a>
+                        <a class="hamburger-link" href="#signup">Signup</a>
                     </li>
                     <li class="hamburger-item">
-                        <a class="link-btn" href="./login.html">Login</a>
+                        <a class="link-btn" href="./login.html">Logout</a>
                     </li>
                 </ul>
             </nav>
@@ -75,7 +85,14 @@
             <!-- Container for all the categories and their products -->
             <div id="categories"></div>
 
-            <a class="link-btn" href="./suggest.html">Suggest a product</a>
+            <div id="suggest" class="suggest">
+                <p class="suggest-text">
+                    Not satisfied with the products you see?
+                </p>
+                <a class="suggest-link link-btn" href="./suggest.html"
+                    >Suggest a product</a
+                >
+            </div>
 
             <!-- Form section -->
             <section class="form-section">
@@ -106,108 +123,7 @@
             <section id="suggestions-section" class="suggestions-section">
                 <h2 class="suggestions-title">User Suggestions</h2>
                 <div id="suggestions" class="suggestions">
-                    <!-- <i class="fas fa-stroopwafel fa-spin"></i>Fetching user
-                    suggestions -->
-                    <div class="suggestion-tile">
-                        <p>
-                            <span class="suggestion-label">Item name:</span>
-                            Foosball
-                        </p>
-                        <p>
-                            <span class="suggestion-label"
-                                >Item description:</span
-                            >
-                            Looks like a football
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Item category:</span>
-                            Electronics
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Reason:</span>
-                            Because I feel like 🙄
-                        </p>
-                    </div>
-                    <div class="suggestion-tile">
-                        <p>
-                            <span class="suggestion-label">Item name:</span>
-                            Foosball
-                        </p>
-                        <p>
-                            <span class="suggestion-label"
-                                >Item description:</span
-                            >
-                            Looks like a football
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Item category:</span>
-                            Electronics
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Reason:</span>
-                            Because I feel like 🙄
-                        </p>
-                    </div>
-                    <div class="suggestion-tile">
-                        <p>
-                            <span class="suggestion-label">Item name:</span>
-                            Foosball
-                        </p>
-                        <p>
-                            <span class="suggestion-label"
-                                >Item description:</span
-                            >
-                            Looks like a football
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Item category:</span>
-                            Electronics
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Reason:</span>
-                            Because I feel like 🙄
-                        </p>
-                    </div>
-                    <div class="suggestion-tile">
-                        <p>
-                            <span class="suggestion-label">Item name:</span>
-                            Foosball
-                        </p>
-                        <p>
-                            <span class="suggestion-label"
-                                >Item description:</span
-                            >
-                            Looks like a football
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Item category:</span>
-                            Electronics
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Reason:</span>
-                            Because I feel like 🙄
-                        </p>
-                    </div>
-                    <div class="suggestion-tile">
-                        <p>
-                            <span class="suggestion-label">Item name:</span>
-                            Foosball
-                        </p>
-                        <p>
-                            <span class="suggestion-label"
-                                >Item description:</span
-                            >
-                            Looks like a football
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Item category:</span>
-                            Electronics
-                        </p>
-                        <p>
-                            <span class="suggestion-label">Reason:</span>
-                            Because I feel like 🙄
-                        </p>
-                    </div>
+                    Fetching user suggestions...
                 </div>
             </section>
             <!-- Scroll to top button -->
@@ -217,6 +133,28 @@
                 </button>
             </div>
         </main>
-        <footer></footer>
+        <footer class="footer">
+            <p>&copy;Cartify. All rights reserved.</p>
+            <address class="footer-links">
+                <a
+                    href="https://www.twitter.com/TunwaseAyobami"
+                    title="Twitter"
+                    aria-label="Twitter"
+                    ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" title="Instagram" aria-label="Instagram"
+                    ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" title="Facebook" aria-label="Facebook"
+                    ><i class="fab fa-facebook"></i
+                ></a>
+                <a
+                    href="https://www.github.com/ayobami11"
+                    title="Github"
+                    aria-label="Github"
+                    ><i class="fab fa-github"></i
+                ></a>
+            </address>
+        </footer>
     </body>
 </html>

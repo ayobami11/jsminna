@@ -1,5 +1,5 @@
 // Global variables
-const dropdownContent = document.getElementById('dropdown-content');
+const dropdownContent = document.getElementsByClassName('dropdown-content');
 
 const scrollTopBtn = document.getElementById('top-btn');
 
@@ -197,16 +197,6 @@ const products = [
                 name: 'Citrus fruit',
                 image: './images/grocery/citrus-fruit.jpg',
                 price: 200
-            },
-            {
-                name: 'Grains',
-                image: './images/grocery/grains.jpg',
-                price: 30000
-            },
-            {
-                name: 'Vegetables',
-                image: './images/grocery/vegetables.jpg',
-                price: 5000
             }
         ]
     }
@@ -228,13 +218,15 @@ const formatWithComma = (number) => {
 
 /**
  * Generates a category link for each category in the store.
- * 
+ *
  * @param {array} productCategory A list of categories and their products
  */
 const generateCategories = (productCategory) => {
     productCategory.forEach(({ category }) => {
         const categoryLink = `<a href=${'#' + category}>${category}</a>`;
-        dropdownContent.innerHTML += categoryLink;
+        [...dropdownContent].forEach(
+            (dropdown) => (dropdown.innerHTML += categoryLink)
+        );
     });
 };
 generateCategories(products);
@@ -286,6 +278,7 @@ const generateCategoryTemplate = ({ category, products }) => {
     );
 
     currentCategory.innerHTML = currentCategoryTitle;
+    
     currentCategory.appendChild(categoryProducts);
     categoriesContainer.appendChild(currentCategory);
 };
@@ -318,10 +311,10 @@ scrollTopBtn.addEventListener('click', scrollToTop);
 const toggleHamburgerDisplay = () => {
     if (!hamburgerNavElement.classList.contains('display-block')) {
         hamburgerNavElement.classList.add('display-block');
-        hamburgerBtnElement.innerHTML = '<i class="fas fa-times"></i>';
+        hamburgerBtnElement.innerHTML = '<i class="fas fa-times fa-2x"></i>';
     } else {
         hamburgerNavElement.classList.remove('display-block');
-        hamburgerBtnElement.innerHTML = '<i class="fas fa-bars"></i>';
+        hamburgerBtnElement.innerHTML = '<i class="fas fa-bars fa-2x"></i>';
     }
 };
 hamburgerBtnElement.addEventListener('click', toggleHamburgerDisplay);
@@ -339,11 +332,12 @@ const generateSuggestionTemplate = ({
     reason
 }) => {
     const suggestionDataContainer = document.createElement('div');
+    suggestionDataContainer.classList.add('suggestion-tile');
     suggestionDataContainer.innerHTML = `
-        <p>Item name: ${itemName}</p>
-        <p>Item description: ${itemDescription}</p>
-        <p>Item category: ${itemCategory}</p>
-        <p>Reason: ${reason}</p>
+        <p><span class="suggestion-label">Item name:<span> ${itemName}</p>
+        <p><span class="suggestion-label">Item description:</span> ${itemDescription}</p>
+        <p><span class="suggestion-label">Item category:</span> ${itemCategory}</p>
+        <p><span class="suggestion-label">Reason:</span> ${reason}</p>
     `;
     suggestionsContainer.appendChild(suggestionDataContainer);
 };
@@ -360,31 +354,11 @@ const getUserSuggestions = (suggestions) => {
 };
 
 /**
- * Calculates the distance from the top of a page to the input element
- *
- * @param {object} element The DOM node that represents the input element
- */
-const getDistanceToTop = (element) => {
-    let location = 0;
-
-    if (element.offsetParent) {
-        do {
-            location += element.offsetTop;
-            element = element.offsetParent;
-            console.log(element);
-        } while (element);
-    }
-
-    return location || 0;
-};
-/**
  * Makes the suggestionSection element visible.
  * Scrolls the page to the user's suggestions.
  */
 const displaySuggestions = () => {
     suggestionsSection.classList.add('display-block');
-    console.log(getDistanceToTop(suggestionsSection));
-
     window.location.href = '#suggestions-section';
 };
 
@@ -400,31 +374,36 @@ const fetchUserSuggestions = async (event) => {
 
     const form = event.target;
     const endpoint = form.action + itemCategory.value;
-    console.log(endpoint);
 
     displaySuggestions();
 
-    const response = await fetch(endpoint);
+    try {
+        const response = await fetch(endpoint, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+                Authorization: `Bearer ${localStorage.getItem('userToken')}`
+            }
+        });
 
-    if (response.ok) {
-        console.log(response);
-        const jsonResponse = await response.json();
-        console.log(jsonResponse);
+        if (response.ok) {
+            const jsonResponse = await response.json();
 
-        if (jsonResponse.success) {
-            getUserSuggestions(jsonResponse.payload.result);
-        } else {
-            if (!document.querySelector('.error-message')) {
-                const failureMessageElement = document.createElement('p');
-                failureMessageElement.innerText =
-                    "Could't get suggestions. Please try again later.";
-                failureMessageElement.classList.add('error-message');
+            if (jsonResponse.success) {
+                getUserSuggestions(jsonResponse.payload.result);
+            } else {
+                if (!document.querySelector('.error-message')) {
+                    const failureMessageElement = document.createElement('p');
+                    failureMessageElement.innerText =
+                        "Could't get suggestions. Please try again later.";
+                    failureMessageElement.classList.add('error-message');
 
-                formElement.after(failureMessageElement);
+                    formElement.after(failureMessageElement);
+                }
             }
         }
+    } catch (error) {
+        console.log(error);
     }
 };
 formElement.addEventListener('submit', fetchUserSuggestions);
-console.log(localStorage);
-console.log(document.querySelector('header').getBoundingClientRect());

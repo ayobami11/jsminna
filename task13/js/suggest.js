@@ -1,5 +1,8 @@
 const formElement = document.querySelector('form');
 
+/**
+ * Returns a boolean indicating if all form inputs are valid
+ */
 const validateFormInputs = () => {
     const formInputs = [...document.getElementsByClassName('input-field')];
     const formInputsValid = formInputs.every((input) => input.checkValidity());
@@ -9,6 +12,11 @@ const validateFormInputs = () => {
     return formInputsValid && selectElement.value;
 };
 
+/**
+ * Makes a request to the API and returns feedback for the user
+ * 
+ * @param {object} event The event object
+ */
 const submitFormData = async (event) => {
     event.preventDefault();
 
@@ -21,33 +29,47 @@ const submitFormData = async (event) => {
         for (const [name, value] of formData) {
             user[name] = value;
         }
-        console.log(JSON.stringify(user));
 
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=UTF-8'
-            },
-            body: JSON.stringify(user)
-        });
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8',
+                    Authorization: `Bearer ${localStorage.getItem('userToken')}`
+                },
+                body: JSON.stringify(user)
+            });
 
-        if (response.ok) {
-            console.log(response);
-            const jsonResponse = await response.json();
-            console.log(jsonResponse);
+            if (response.ok) {
+                const jsonResponse = await response.json();
 
-            if (jsonResponse.success) {
-                if (document.querySelector('.error-message')) {
-                    document.querySelector('.error-message').remove();
+                if (jsonResponse.success) {
+                    if (document.querySelector('.error-message')) {
+                        document.querySelector('.error-message').remove();
+                    }
+
+                    const successMessageElement = document.createElement('p');
+                    successMessageElement.innerText = 'Submission successful!';
+                    successMessageElement.classList.add('success-message');
+
+                    setTimeout(() => window.location.href = './index.html', 3000);
+
+                    formElement.after(successMessageElement);
+                } else {
+                    if (!document.querySelector('.error-message')) {
+                        const failureMessageElement = document.createElement(
+                            'p'
+                        );
+                        failureMessageElement.innerText =
+                            'Submission failed! Please try again later.';
+                        failureMessageElement.classList.add('error-message');
+
+                        formElement.after(failureMessageElement);
+                    }
                 }
-
-                const successMessageElement = document.createElement('p');
-                successMessageElement.innerText =
-                    'Submission successful!';
-                successMessageElement.classList.add('success-message');
-
-                formElement.after(successMessageElement);
             }
+        } catch (error) {
+            console.log(error);
         }
     }
 };

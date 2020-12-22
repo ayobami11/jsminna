@@ -10,11 +10,14 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-margin-top: 5.5em;
 }
 
 body {
     color: hsl(0, 0%, 25%);
+}
+
+main {
+    margin-top: 6em;
 }
 
 ul {
@@ -38,9 +41,6 @@ img {
     object-fit: cover;
 }
 
-main {
-    margin-top: 5.5em;
-}
 
 select,
 option {
@@ -122,7 +122,6 @@ select {
     display: inline-block;
 }
 
-
 .dropdown-btn {
     background: transparent;
     color: hsl(30, 80%, 50%);
@@ -139,7 +138,7 @@ select {
     background: hsl(0, 0%, 75%);
     color: hsl(0, 0%, 100%);
     display: block;
-    padding: .5em;
+    padding: .75em;
     text-transform: capitalize;
 }
 
@@ -154,7 +153,6 @@ select {
 .header-login {
     display: none;
 }
-
 
 /* Hamburger */
 .hamburger {
@@ -172,7 +170,7 @@ select {
     padding: .75em 0;
     position: fixed;
     text-align: center;
-    top: 20%;
+    top: 30%;
     transform: translateX(-50%);
     width: 90%;
 }
@@ -184,6 +182,7 @@ select {
 /* Categories */
 .category {
     margin: 1.5em auto;
+    scroll-margin-top: 4.75em;
 }
 
 .category-title {
@@ -226,9 +225,36 @@ select {
     padding: .75em 0;
 }
 
+.product-name {
+    color: hsl(60, 80%, 40%);
+}
+
+.product-price {
+    color: hsl(90, 80%, 40%);
+}
+
 .product-price::before {
     /* Naira sign */
     content: '\20A6';
+    margin-right: .15em;
+}
+
+/* Suggest */
+.suggest {
+    margin: 0 auto;
+    scroll-margin-top: 5.8em;
+    text-align: center;
+    width: 90%;
+}
+
+.suggest-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.suggest-link {
+    display: inline-block;
+    margin: 1em 0;
 }
 
 /* Form */
@@ -311,6 +337,7 @@ select {
 
 .suggestion-tile:hover {
     border-style: dotted;
+    border-radius: 0;
     transform: scale(1.02);
     transition: all .25s ease-in-out;
 }
@@ -340,6 +367,28 @@ select {
     transition: all .75s ease-in-out;
 }
 
+/* Footer */
+.footer {
+    border-top: 2px solid hsl(30, 100%, 50%);
+    padding: 1em;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin: .25em auto;
+    max-width: 300px;
+}
+
+.footer-links a {
+    font-size: 1.125rem;
+}
+
+.footer-links a:hover {
+    color: hsl(30, 100%, 30%);
+    transition: all .75s ease-in-out;
+}
+
 /* JS used classes */
 .display-block {
     display: block;
@@ -363,8 +412,11 @@ select {
     .products {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        /* grid-gap: 1em;
-        margin: 0; */
+    }
+
+    /* Footer */
+    .footer-links a {
+        font-size: 1.25rem;
     }
 }
 

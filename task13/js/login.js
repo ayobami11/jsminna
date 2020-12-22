@@ -29,6 +29,11 @@ const validateFormInputs = () => {
     return formInputsValid;
 };
 
+/**
+ * Makes a request to the API and gives feeback if the request was unsuccessful.
+ * 
+ * @param {object} event The event object
+ */
 const submitFormData = async (event) => {
     event.preventDefault();
 
@@ -42,34 +47,36 @@ const submitFormData = async (event) => {
             for (const [name, value] of formData) {
                 user[name] = value;
             }
-            console.log(JSON.stringify(user));
 
             const response = await fetch(endpoint, {
                 method: 'POST',
-                body: JSON.stringify(user),
                 headers: {
                     'Content-Type': 'application/json; charset=UTF-8'
-                }
+                },
+                body: JSON.stringify(user)
             });
 
             if (response.ok) {
-                console.log(response);
                 const jsonResponse = await response.json();
-                console.log(jsonResponse);
 
                 if (jsonResponse.success) {
                     if (document.querySelector('.error-message')) {
                         document.querySelector('.error-message').remove();
                     }
 
-                    // window.location.href = '../index.html';
-                    console.log(localStorage.getItem('userToken'));
+                    localStorage.setItem(
+                        'userToken',
+                        jsonResponse.payload.token
+                    );
+
+                    window.location.href = './index.html';
                 } else {
                     if (!document.querySelector('.error-message')) {
                         const errorMessageElement = document.createElement('p');
-                        errorMessageElement.innerText = 'Invalid email or password';
+                        errorMessageElement.innerText =
+                            'Invalid email or password';
                         errorMessageElement.classList.add('error-message');
-                        
+
                         formElement.before(errorMessageElement);
                     }
                 }
@@ -80,4 +87,3 @@ const submitFormData = async (event) => {
     }
 };
 formElement.addEventListener('submit', submitFormData);
-console.log(localStorage)
